@@ -10,18 +10,22 @@ window.configure(bg=bg_color)
 # ↑↑↑ お約束のコード ↑↑↑
 
 # 出力ラベルの作成
-label = tk.Label(window, text="名前を入力してくだいさい", bg=bg_color, fg=fg_color)
-label.pack(pady=10)
+label0 = tk.Label(window, text="名前を入力してください", bg=bg_color, fg=fg_color)
+label0.pack(pady=10)
 
-
-name = []
+name_list = []
 
 
 def button_action():  # 関数の定義 ※ボタンが押されたときの動き
     user_input = entry1.get()  # 入力値を取得
-    name.append(user_input)
-    for i in name:
-        label1.config(text=f"\n{i}")
+    name_list.append(user_input)
+
+    formatted_str = ""
+    for name in name_list:
+        formatted_str += f"{name}\n"
+        # formatted_str = "\n".join(name)
+
+    label1.config(text=formatted_str)
 
 
 # 画面に出力
