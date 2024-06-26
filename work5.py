@@ -30,9 +30,10 @@ def button_action():  # 関数の定義 ※ボタンが押されたときの動�
 
         num = random.randint(0, 4)
         label1.config(text=str_list[num])  # 画面に出力
-        entry1.delete(tk.FIRST, tk.END)  # Entryの文字を削除
+
     else:
         label2.config(text="")  # 画面に出力
+    entry1.delete(0, tk.END)  # Entryの文字を削除
 
 
 # 入力フィールドの作成
